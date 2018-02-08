@@ -6,10 +6,22 @@ class Fibonacci {
 		else
 			return fibonacciRecursivo(r-1) + fibonacciRecursivo(r-2);
 	}
+	
+	static int fibonacciArreglo(int n){
+		int[] array;
+		array = new int[n+1];
+		array[0] = 0;
+		array[1] = 1;
+		for(int i = 2; i <= n; i++)
+			array[i] = array[i-1] + array[i-2];
+		
+		
+		return array[n];
+	}
+	
 	public static void main(String[] args) {
 		int n = 0;
 		Scanner in = new Scanner(System.in);
-		n = in.nextInt();
-	System.out.println("Fib(" + n + ") = " + fibonacciRecursivo(n));
+	System.out.println("Fib(" + n + ") = " + fibonacciArreglo(n) );
 	}
 }
